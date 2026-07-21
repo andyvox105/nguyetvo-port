@@ -113,6 +113,8 @@
     text-wrap:balance;
   }
   .hero-h1 .accent{color:var(--accent);}
+  .hero-h1 .hero-role{font-size:.52em; display:block; margin-top:6px; color:var(--text-dim); font-weight:700;}
+  .hero-h1 .hero-role .accent{color:var(--accent);}
   .hero-sub{
     font-family:var(--sans); color:var(--text-dim);
     font-size:17px; line-height:1.6; max-width:560px; margin:0 0 30px;
@@ -207,6 +209,11 @@
     display:flex; align-items:center; gap:6px; transition:color .15s;
   }
   .project-links a:hover{color:var(--accent-soft);}
+  .demo-note{
+    padding:0 28px 18px; margin-top:-6px;
+    font-family:var(--mono); font-size:11.5px; color:var(--text-faint);
+  }
+  .demo-note b{color:var(--text-dim); font-weight:600;}
 
   @media (max-width:640px){ .project-stats{grid-template-columns:1fr 1fr;} }
 
@@ -325,17 +332,24 @@
         <div class="term-body" id="termBody"></div>
       </div>
 
-      <h1 class="hero-h1">Nguyet Vo <span class="accent">/</span> Full-Stack Developer</h1>
+      <h1 class="hero-h1">Nguyet Vo<span class="hero-role">Full-Stack Developer <span class="accent">|</span> AI</span></h1>
       <p class="hero-sub">
         <span class="lang-vi">
-          Gần 2 năm kinh nghiệm full-stack trên hệ thống production thực tế và các dự án
-          AI automation tự xây dựng — chuyên kết nối dữ liệu, workflow engine và LLM API
-          thành pipeline hoàn chỉnh, mang lại kết quả đo lường được cho doanh nghiệp.
+          AI-Driven Developer với gần 2 năm kinh nghiệm fullstack trong các dự án phát
+          triển ứng dụng web và nghiên cứu, triển khai các giải pháp AI automation cho
+          công việc nội bộ, giúp tối ưu quy trình vận hành và cắt giảm khối lượng thao
+          tác thủ công, lặp lại cho doanh nghiệp. Từ nền tảng đó, hướng tới việc tham
+          gia sâu hơn vào các dự án nghiên cứu và triển khai AI ứng dụng thực tiễn — nơi
+          công nghệ được chuyển hóa thành giá trị cụ thể, thay vì dừng lại ở giai đoạn
+          thử nghiệm.
         </span>
         <span class="lang-en">
-          Nearly 2 years of full-stack experience across production systems and self-built
-          AI automation projects — specializing in connecting data sources, workflow engines,
-          and LLM APIs into end-to-end pipelines that deliver measurable business outcomes.
+          AI-Driven Developer with nearly 2 years of fullstack experience building web
+          applications, alongside researching and delivering AI automation solutions
+          for internal operations — streamlining workflows and cutting down repetitive
+          manual work for the business. Building on that foundation, I'm looking to go
+          deeper into AI research and applied-AI projects, where technology turns into
+          concrete value rather than staying at the experimental stage.
         </span>
       </p>
       <div class="hero-cta">
@@ -349,51 +363,49 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="eyebrow">Stack</p>
-        <h2 class="sec-title"><span class="lang-vi">Công nghệ đã dùng trong dự án thật</span><span class="lang-en">Technology used in real projects</span></h2>
+        <h2 class="sec-title">Tech Stacks</h2>
       </div>
       <div class="node-map reveal-group">
         <div class="node reveal">
           <div class="node-label">Frontend</div>
           <ul>
-            <li>Next.js, HTML/CSS/JS</li>
-            <li>Bootstrap, Streamlit</li>
-            <li><span class="lang-vi">i18n song ngữ EN–VI</span><span class="lang-en">EN–VI i18n</span></li>
+            <li>Next.js</li>
+            <li>React.js</li>
+            <li>HTML / CSS / JS</li>
           </ul>
         </div>
         <div class="node reveal">
           <div class="node-label">Backend</div>
           <ul>
-            <li>NestJS, Node.js / TS</li>
-            <li>Laravel (PHP), Python</li>
+            <li>NestJS</li>
+            <li>Node.js / TypeScript</li>
             <li>REST APIs, Webhooks</li>
-            <li>Drizzle ORM</li>
           </ul>
         </div>
         <div class="node reveal">
           <div class="node-label">Data</div>
           <ul>
-            <li>PostgreSQL, SQL Server, MySQL, SQLite</li>
-            <li>Supabase, Neon.tech</li>
-            <li>pgvector (HNSW), pg_trgm</li>
-            <li>Hybrid Search (RRF)</li>
+            <li>PostgreSQL</li>
+            <li>SQL Server</li>
+            <li>MySQL</li>
+            <li>SQLite</li>
           </ul>
         </div>
         <div class="node reveal">
           <div class="node-label">AI & Automation</div>
           <ul>
-            <li>Groq API, Gemini API</li>
-            <li>RAG pipelines, Apify scraping</li>
-            <li>n8n, Playwright</li>
-            <li>HubSpot API, Discord Webhook</li>
+            <li><span class="lang-vi">AI API (Groq, Gemini)</span><span class="lang-en">AI APIs (Groq, Gemini)</span></li>
+            <li>RAG pipelines</li>
+            <li>n8n, Make</li>
+            <li>Playwright</li>
           </ul>
         </div>
         <div class="node reveal">
-          <div class="node-label">Infra & Deploy</div>
+          <div class="node-label"><span class="lang-vi">Hạ tầng & Công cụ AI</span><span class="lang-en">Infra & AI Tooling</span></div>
           <ul>
-            <li>Docker, docker-compose</li>
-            <li>Vercel, Streamlit Cloud</li>
-            <li>pnpm monorepo, Turborepo</li>
-            <li><span class="lang-vi">AI Agent hỗ trợ dev (Cursor, Claude Code)</span><span class="lang-en">AI-assisted dev (Cursor, Claude Code)</span></li>
+            <li>Docker</li>
+            <li>Vercel</li>
+            <li><span class="lang-vi">Cursor, Claude Code, Windsurf</span><span class="lang-en">Cursor, Claude Code, Windsurf</span></li>
           </ul>
         </div>
       </div>
@@ -404,7 +416,7 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="eyebrow">Selected work</p>
-        <h2 class="sec-title"><span class="lang-vi">3 dự án — từ pipeline AI đến công cụ tìm việc thực chiến</span><span class="lang-en">3 projects — AI pipelines to production job-matching tools</span></h2>
+        <h2 class="sec-title"><span class="lang-vi">Dự án cá nhân — nghiên cứu & ứng dụng AI automation</span><span class="lang-en">Personal projects — AI automation research &amp; practice</span></h2>
       </div>
 
       <article class="project reveal">
@@ -413,18 +425,20 @@
           <h3 class="project-title"><span class="lang-vi">Công cụ so khớp việc làm LinkedIn với AI</span><span class="lang-en">AI-powered LinkedIn job matching toolkit</span></h3>
           <p class="project-desc">
             <span class="lang-vi">
-              Xây dựng bộ công cụ tìm việc cá nhân gồm hai app: ứng dụng Next.js scrape
-              tin tuyển dụng từ LinkedIn qua Apify, parse CV bằng Gemini AI, sau đó xếp
-              hạng độ phù hợp bằng vector similarity + LLM re-rank kèm điểm fit, kỹ năng
-              còn thiếu và gợi ý apply. App Streamlit độc lập phục vụ nhu cầu scrape
-              nhanh, lưu trữ SQLite.
+              Công cụ hỗ trợ tìm việc cá nhân, tự động scrape tin tuyển dụng từ LinkedIn
+              qua Apify và phân tích CV bằng Gemini AI để đánh giá độ phù hợp. Hệ thống
+              kết hợp vector similarity với LLM re-rank nhằm chấm điểm fit, chỉ ra kỹ
+              năng còn thiếu và gợi ý cách ứng tuyển hiệu quả hơn. Bên cạnh ứng dụng
+              chính trên Next.js, một dashboard Streamlit độc lập được xây thêm để scrape
+              nhanh và lưu trữ dữ liệu cục bộ bằng SQLite.
             </span>
             <span class="lang-en">
-              A personal job-hunting toolkit with two apps: a Next.js app that scrapes
-              LinkedIn jobs via Apify, parses an uploaded CV with Gemini AI, then ranks
-              matches using vector similarity + LLM re-rank — showing fit score, missing
-              skills, and apply tips. A standalone Streamlit scraper dashboard handles
-              lightweight scraping backed by SQLite.
+              A personal job-search assistant that automatically scrapes LinkedIn
+              listings via Apify and analyzes an uploaded CV with Gemini AI to assess
+              fit. It combines vector similarity with LLM re-ranking to produce a fit
+              score, surface missing skills, and suggest ways to strengthen an
+              application. Alongside the main Next.js app, a standalone Streamlit
+              dashboard supports lightweight scraping with local SQLite storage.
             </span>
           </p>
         </div>
@@ -445,13 +459,17 @@
           <span class="chip">Apify</span><span class="chip">Docker</span><span class="chip">Vercel</span>
         </div>
         <div class="project-stats">
-          <div class="stat"><div class="stat-num">2</div><div class="stat-lbl"><span class="lang-vi">app trong 1 repo (Next.js + Streamlit)</span><span class="lang-en">apps in one repo (Next.js + Streamlit)</span></div></div>
+          <div class="stat"><div class="stat-num">Apify</div><div class="stat-lbl"><span class="lang-vi">scrape tin tuyển dụng từ LinkedIn</span><span class="lang-en">scrapes LinkedIn job listings</span></div></div>
           <div class="stat"><div class="stat-num">Gemini</div><div class="stat-lbl"><span class="lang-vi">parse CV + re-rank kết quả</span><span class="lang-en">CV parsing + result re-ranking</span></div></div>
           <div class="stat"><div class="stat-num">Live</div><div class="stat-lbl"><span class="lang-vi">deploy trên Vercel</span><span class="lang-en">deployed on Vercel</span></div></div>
         </div>
         <div class="project-links">
           <a href="https://joblens-alpha.vercel.app" target="_blank" rel="noopener">↗ Live demo</a>
           <a href="https://github.com/andyvox105/joblens" target="_blank" rel="noopener">↗ GitHub repo</a>
+        </div>
+        <div class="demo-note">
+          <span class="lang-vi"><b>Tài khoản demo:</b> user01@gmail.com / User01@pass</span>
+          <span class="lang-en"><b>Demo account:</b> user01@gmail.com / User01@pass</span>
         </div>
       </article>
 
@@ -461,19 +479,22 @@
           <h3 class="project-title"><span class="lang-vi">Lead Generation & AI Scoring cho bất động sản</span><span class="lang-en">Lead Generation &amp; AI Scoring for Real Estate</span></h3>
           <p class="project-desc">
             <span class="lang-vi">
-              Thiết kế và triển khai hệ thống tự động hóa toàn bộ quy trình xử lý lead bất
-              động sản: landing page song ngữ thu thập thông tin, workflow n8n điều phối
-              dữ liệu, mô hình Groq / Gemini AI phân loại mức độ quan tâm (HOT / WARM / COLD) và
-              đối chiếu với gần 9.300 tin đăng trong Supabase. Lead tiềm năng cao được đẩy
-              trực tiếp vào HubSpot CRM kèm cảnh báo tức thời qua Discord.
+              Hệ thống tự động hóa quy trình xử lý lead cho bất động sản, từ thu thập
+              đến phân loại và bàn giao cho đội sales. Landing page song ngữ thu thập
+              thông tin khách hàng, workflow n8n điều phối dữ liệu qua từng bước, và mô
+              hình Groq / Gemini AI phân loại mức độ quan tâm (HOT / WARM / COLD) dựa trên
+              đối chiếu với gần 9.300 tin đăng trong Supabase. Lead tiềm năng cao được
+              đẩy thẳng vào HubSpot CRM kèm cảnh báo tức thời qua Discord, giúp đội sales
+              phản hồi ngay khi cơ hội còn "nóng".
             </span>
             <span class="lang-en">
-              Designed and implemented an end-to-end automation system for real estate
-              lead processing: a bilingual landing page captures leads, an n8n workflow
-              orchestrates the data pipeline, and a Groq / Gemini AI model classifies buyer intent
-              (HOT / WARM / COLD) against a catalog of nearly 9,300 listings in Supabase.
-              High-intent leads are pushed directly into HubSpot CRM with real-time
-              Discord alerts.
+              An end-to-end automation system for real estate lead processing, from
+              capture through classification to sales handoff. A bilingual landing page
+              collects buyer information, an n8n workflow orchestrates the pipeline, and
+              a Groq / Gemini AI model classifies buyer intent (HOT / WARM / COLD) by
+              matching against a catalog of nearly 9,300 listings in Supabase. High-intent
+              leads are routed directly into HubSpot CRM with real-time Discord alerts,
+              letting the sales team respond while interest is still fresh.
             </span>
           </p>
         </div>
@@ -510,18 +531,20 @@
           <h3 class="project-title"><span class="lang-vi">RAG bot tổng hợp tri thức từ chat nội bộ</span><span class="lang-en">RAG bot for internal team chat knowledge</span></h3>
           <p class="project-desc">
             <span class="lang-vi">
-              Xây dựng hệ thống tổng hợp tri thức từ hội thoại nội bộ đa nền tảng
-              (Slack, Discord, Chatwork, Telegram) thành một kho dữ liệu có thể truy vấn
-              được. Người dùng đặt câu hỏi trực tiếp qua Discord bot và nhận câu trả lời
-              kèm nguồn trích dẫn, nhờ kiến trúc hybrid search (RRF) trên pgvector kết
-              hợp sinh câu trả lời bằng Groq / Gemini.
+              Hệ thống biến hội thoại nội bộ rải rác trên nhiều nền tảng chat — Slack,
+              Discord, Chatwork, Telegram — thành một kho tri thức duy nhất, có thể truy
+              vấn được. Thay vì phải nhớ hoặc lục lại từng đoạn chat cũ, người dùng chỉ
+              cần đặt câu hỏi trực tiếp qua Discord bot và nhận câu trả lời kèm nguồn
+              trích dẫn, nhờ kiến trúc hybrid search (RRF) trên pgvector kết hợp sinh
+              câu trả lời bằng Groq / Gemini.
             </span>
             <span class="lang-en">
-              Built a system that consolidates internal team conversations across
-              Slack, Discord, Chatwork, and Telegram into a single, queryable knowledge
-              base. Users ask questions directly through a Discord bot and receive
-              answers with cited sources, powered by a hybrid search (RRF) architecture
-              on pgvector combined with Groq / Gemini answer generation.
+              A system that turns internal conversations scattered across multiple chat
+              platforms — Slack, Discord, Chatwork, Telegram — into a single, queryable
+              knowledge base. Instead of digging through old chat history, users simply
+              ask a question via a Discord bot and get an answer with cited sources,
+              powered by a hybrid search (RRF) architecture on pgvector combined with
+              Groq / Gemini answer generation.
             </span>
           </p>
         </div>
@@ -544,7 +567,7 @@
         </div>
         <div class="project-stats">
           <div class="stat"><div class="stat-num">4</div><div class="stat-lbl"><span class="lang-vi">nền tảng chat được kết nối</span><span class="lang-en">chat platforms connected</span></div></div>
-          <div class="stat"><div class="stat-num">2/4</div><div class="stat-lbl"><span class="lang-vi">connector test end-to-end thật</span><span class="lang-en">connectors tested end-to-end live</span></div></div>
+          <div class="stat"><div class="stat-num">≤400</div><div class="stat-lbl"><span class="lang-vi">token mỗi chunk trước khi embed</span><span class="lang-en">tokens per chunk before embedding</span></div></div>
           <div class="stat"><div class="stat-num">RRF</div><div class="stat-lbl"><span class="lang-vi">hybrid search + trích nguồn</span><span class="lang-en">hybrid search + cited sources</span></div></div>
         </div>
         <div class="project-links">
@@ -571,50 +594,65 @@
           </div>
           <p class="project-desc" style="margin:0;">
             <span class="lang-vi">
-              Kỹ sư full-stack, phụ trách phát triển và vận hành hệ thống production phục vụ
-              khách hàng doanh nghiệp, song song chủ động nghiên cứu và triển khai các giải
-              pháp AI automation tối ưu quy trình làm việc của team.
+              Kỹ sư full-stack, tham gia phát triển nhiều dự án phần mềm ở cả frontend
+              lẫn backend, phối hợp với các bộ phận liên quan xuyên suốt quá trình xây
+              dựng sản phẩm. Song song đó, chủ động nghiên cứu và triển khai các công cụ
+              automation nội bộ nhằm tăng năng suất làm việc cho team.
             </span>
             <span class="lang-en">
-              Full-stack engineer responsible for developing and operating a production system
-              serving enterprise clients, while proactively researching and delivering
-              AI automation solutions for the team.
+              Full-stack engineer contributing to multiple software projects across both
+              frontend and backend, working closely with cross-functional teams
+              throughout the product lifecycle. Also proactively researches and builds
+              internal automation tools to boost team productivity.
             </span>
           </p>
 
           <div class="xp-sub">
             <div class="xp-sub-label">
-              <span class="lang-vi">Dự án: Hệ thống Production</span>
-              <span class="lang-en">Project: Production System</span>
+              <span class="lang-vi">Phát triển phần mềm</span>
+              <span class="lang-en">Software Development</span>
             </div>
             <ul>
               <li>
-                <span class="lang-vi">Phát triển các <b>module nghiệp vụ chính</b> và hệ thống <b>quản trị đa cấp</b>: super admin quản lý agency, agency quản lý các đơn vị trực thuộc.</span>
-                <span class="lang-en">Developed core <b>business modules</b> and a <b>multi-tier admin system</b> — super admin manages agencies, each agency manages its affiliated units.</span>
+                <span class="lang-vi">Tham gia phát triển <b>fullstack</b> cho các dự án web application, phối hợp chặt chẽ với các bộ phận liên quan trong suốt vòng đời sản phẩm.</span>
+                <span class="lang-en">Contributed as a <b>fullstack</b> developer on web application projects, working closely with cross-functional teams throughout the product lifecycle.</span>
               </li>
               <li>
-                <span class="lang-vi">Debug, xử lý sự cố và tối ưu hiệu năng trên hệ thống production đang phục vụ người dùng thực tế.</span>
-                <span class="lang-en">Debugged, resolved production issues, and optimized performance on a live system serving real end users.</span>
+                <span class="lang-vi">Ứng dụng các công cụ <b>AI hỗ trợ lập trình</b> (Claude Code, Cursor, Windsurf) vào quy trình phát triển, giúp tăng tốc độ code, rút ngắn thời gian debug và giảm thiểu sai sót.</span>
+                <span class="lang-en">Applied <b>AI coding assistants</b> (Claude Code, Cursor, Windsurf) throughout the development workflow, speeding up coding, shortening debugging time, and reducing errors.</span>
+              </li>
+              <li>
+                <span class="lang-vi">Debug, xử lý sự cố và tối ưu hiệu năng hệ thống đang phục vụ người dùng thực tế.</span>
+                <span class="lang-en">Debugged, resolved issues, and optimized performance on systems serving real end users.</span>
               </li>
             </ul>
             <div class="xp-tools">
               <span class="chip">Next.js</span><span class="chip">NestJS</span><span class="chip">SQL Server</span>
+              <span class="chip">Claude Code</span><span class="chip">Cursor</span>
             </div>
           </div>
 
           <div class="xp-sub">
             <div class="xp-sub-label">
-              <span class="lang-vi">Sáng kiến nội bộ: Automation Tooling</span>
-              <span class="lang-en">Internal Initiative: Automation Tooling</span>
+              <span class="lang-vi">Automation Tooling — R&D</span>
+              <span class="lang-en">Automation Tooling — R&amp;D</span>
             </div>
             <ul>
               <li>
-                <span class="lang-vi">Nghiên cứu và xây dựng công cụ tự động hóa thu thập, xử lý dữ liệu bằng <b>n8n</b> và <b>Playwright</b>, giúp giảm đáng kể thao tác thủ công lặp lại của team.</span>
-                <span class="lang-en">Researched and built internal automation tools for data collection and processing using <b>n8n</b> and <b>Playwright</b>, significantly reducing repetitive manual work for the team.</span>
+                <span class="lang-vi">Xây dựng workflow <b>n8n</b> tự động tiếp nhận task từ Chatwork/Slack, tạo ticket Redmine và gửi thông báo đến các bộ phận liên quan — giúp tăng năng suất xử lý task và hạn chế tối đa sai sót thủ công.</span>
+                <span class="lang-en">Built an <b>n8n</b> workflow that automatically ingests tasks from Chatwork/Slack, creates Redmine tickets, and notifies the relevant teams — boosting task-handling throughput and minimizing manual errors.</span>
+              </li>
+              <li>
+                <span class="lang-vi">Phát triển browser extension <b>dịch nhanh và tóm tắt nội dung trang web bằng AI</b>, giúp team tra cứu tài liệu tiếng nước ngoài nhanh hơn.</span>
+                <span class="lang-en">Built a browser extension for <b>AI-powered quick translation and summarization of web content</b>, helping the team look up foreign-language material faster.</span>
+              </li>
+              <li>
+                <span class="lang-vi">Xây dựng công cụ <b>cào lead tiềm năng từ LinkedIn</b> cho bộ phận sales bằng Playwright, và công cụ <b>lọc CV tự động</b> hỗ trợ tuyển dụng.</span>
+                <span class="lang-en">Built a <b>LinkedIn lead-scraping tool</b> for the sales team using Playwright, along with an <b>automated CV-screening tool</b> for recruitment.</span>
               </li>
             </ul>
             <div class="xp-tools">
-              <span class="chip">n8n</span><span class="chip">Playwright</span>
+              <span class="chip">n8n</span><span class="chip">Playwright</span><span class="chip">Redmine</span>
             </div>
           </div>
         </div>
@@ -629,26 +667,26 @@
           </div>
           <p class="project-desc" style="margin:0;">
             <span class="lang-vi">
-              Thực tập sinh phát triển phần mềm, tiếp cận quy trình phát triển web theo
-              mô hình MVC truyền thống trong một dự án thực tế của công ty.
+              Thực tập sinh phát triển phần mềm, làm quen với quy trình phát triển web
+              chuyên nghiệp theo kiến trúc MVC thông qua một dự án thực tế của công ty.
             </span>
             <span class="lang-en">
-              Software development intern, gaining hands-on experience with the
-              traditional MVC web development workflow on a real company project.
+              Software development intern, gaining first-hand experience with a
+              professional MVC web development workflow on a real company project.
             </span>
           </p>
           <ul>
             <li>
-              <span class="lang-vi">Xây dựng giao diện người dùng với <b>HTML/CSS, Bootstrap</b> và xử lý logic phía server bằng <b>PHP, Laravel Framework</b>.</span>
-              <span class="lang-en">Built user interfaces with <b>HTML/CSS and Bootstrap</b>, and implemented server-side logic using <b>PHP and the Laravel</b> framework.</span>
+              <span class="lang-vi">Xây dựng giao diện người dùng bằng <b>HTML/CSS, Bootstrap</b>, đồng thời xử lý logic phía server với <b>PHP</b> trên nền <b>Laravel</b>.</span>
+              <span class="lang-en">Built user interfaces with <b>HTML/CSS and Bootstrap</b>, and implemented server-side logic in <b>PHP</b> on the <b>Laravel</b> framework.</span>
             </li>
             <li>
-              <span class="lang-vi">Thiết kế cơ sở dữ liệu và viết truy vấn <b>MySQL</b> cho các module trong dự án thực tế.</span>
-              <span class="lang-en">Designed database schemas and wrote <b>MySQL</b> queries for real project modules.</span>
+              <span class="lang-vi">Thiết kế lược đồ cơ sở dữ liệu và viết truy vấn <b>MySQL</b> tối ưu cho các module trong dự án.</span>
+              <span class="lang-en">Designed database schemas and wrote optimized <b>MySQL</b> queries for project modules.</span>
             </li>
             <li>
-              <span class="lang-vi">Thực hành quy trình làm việc nhóm chuyên nghiệp: nhận task, code, review, tiếp thu và xử lý phản hồi.</span>
-              <span class="lang-en">Practiced professional team workflows: picking up tasks, coding, code review, and incorporating feedback.</span>
+              <span class="lang-vi">Làm quen với quy trình làm việc nhóm chuyên nghiệp — nhận task, code, review chéo và tiếp thu phản hồi để cải thiện chất lượng code.</span>
+              <span class="lang-en">Adapted to a professional team workflow — picking up tasks, coding, peer review, and incorporating feedback to improve code quality.</span>
             </li>
           </ul>
           <div class="xp-tools">
@@ -672,24 +710,24 @@
           <div class="log-meta"><span class="lang-vi">Học vấn</span><span class="lang-en">Education</span></div>
           <h3 class="log-title">Công nghệ thông tin — FPT Polytechnic</h3>
           <p class="log-body">
-            <span class="lang-vi">Nền tảng vững về lập trình và thiết kế hệ thống, được củng cố qua thực hành thực tế thay vì chỉ dừng ở lý thuyết trên lớp.</span>
-            <span class="lang-en">Solid foundation in programming and systems design, reinforced through hands-on practice beyond classroom theory.</span>
+            <span class="lang-vi">Trang bị nền tảng lập trình và tư duy thiết kế hệ thống, được củng cố bằng thực hành trên các dự án thực tế thay vì chỉ dừng ở lý thuyết trên lớp.</span>
+            <span class="lang-en">Built a foundation in programming and systems design, reinforced through hands-on work on real projects rather than classroom theory alone.</span>
           </p>
         </div>
         <div class="log-item reveal">
           <div class="log-meta"><span class="lang-vi">Định hướng</span><span class="lang-en">Direction</span></div>
           <h3 class="log-title"><span class="lang-vi">Full-Stack Developer, thiên về automation & tích hợp AI</span><span class="lang-en">Full-Stack Developer, focused on automation &amp; AI integration</span></h3>
           <p class="log-body">
-            <span class="lang-vi">Ưu tiên các bài toán kết nối những hệ thống rời rạc — form, database, workflow engine, LLM API — thành một luồng vận hành hoàn chỉnh, mang lại kết quả đo lường được cho doanh nghiệp.</span>
-            <span class="lang-en">Focused on problems that connect disconnected systems — forms, databases, workflow engines, LLM APIs — into a complete, working pipeline that delivers measurable business results.</span>
+            <span class="lang-vi">Hứng thú với các bài toán kết nối những hệ thống rời rạc — form, database, workflow engine, LLM API — thành một luồng vận hành liền mạch, tạo ra kết quả đo lường được cho doanh nghiệp thay vì dừng lại ở demo.</span>
+            <span class="lang-en">Drawn to problems that connect disconnected systems — forms, databases, workflow engines, LLM APIs — into a seamless, working pipeline that delivers measurable business results rather than staying a demo.</span>
           </p>
         </div>
         <div class="log-item reveal">
           <div class="log-meta"><span class="lang-vi">Đang tìm</span><span class="lang-en">Looking for</span></div>
           <h3 class="log-title"><span class="lang-vi">Vị trí Full-Stack Developer thiên về AI Automation</span><span class="lang-en">Full-Stack Developer role — AI Automation focus</span></h3>
           <p class="log-body">
-            <span class="lang-vi">Gần 2 năm kinh nghiệm thực chiến trên hệ thống production và các dự án automation/AI cá nhân, thành thạo làm việc với kiến trúc nhiều dịch vụ (webhook, queue, vector database) và tích hợp AI Agent vào quy trình phát triển.</span>
-            <span class="lang-en">Nearly 2 years of hands-on experience across production systems and personal automation/AI projects, with strong command of multi-service architectures (webhooks, queues, vector databases) and AI-agent-integrated development workflows.</span>
+            <span class="lang-vi">Gần 2 năm kinh nghiệm thực chiến trên hệ thống production và các dự án automation/AI tự xây dựng, thành thạo kiến trúc nhiều dịch vụ (webhook, queue, vector database) và quy trình phát triển có tích hợp AI Agent.</span>
+            <span class="lang-en">Nearly 2 years of hands-on experience across production systems and self-built automation/AI projects, comfortable working with multi-service architectures (webhooks, queues, vector databases) and AI-agent-integrated development workflows.</span>
           </p>
         </div>
       </div>
@@ -730,19 +768,19 @@
     vi: [
       {p:true, t:'whoami'},
       {k:'name',       v:'Nguyet Vo'},
-      {k:'role',       v:'Full-Stack Developer'},
+      {k:'role',       v:'Full-Stack Developer | AI'},
       {k:'education',  v:'CNTT — FPT Polytechnic'},
       {k:'experience', v:'~2 năm · Alta Software → JVIT Tech'},
-      {k:'focus',      v:'automation · AI integration · RAG'},
+      {k:'focus',      v:'AI integration · RAG · n8n · AI Agent'},
       {k:'status',     v:'open to new opportunities'}
     ],
     en: [
       {p:true, t:'whoami'},
       {k:'name',       v:'Nguyet Vo'},
-      {k:'role',       v:'Full-Stack Developer'},
+      {k:'role',       v:'Full-Stack Developer | AI'},
       {k:'education',  v:'IT — FPT Polytechnic'},
       {k:'experience', v:'~2 years · Alta Software → JVIT Tech'},
-      {k:'focus',      v:'automation · AI integration · RAG'},
+      {k:'focus',      v:'AI integration · RAG · n8n · AI Agent'},
       {k:'status',     v:'open to new opportunities'}
     ]
   };
