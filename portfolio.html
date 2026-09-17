@@ -208,6 +208,143 @@
   }
   .project-links a:hover{color:var(--accent-soft);}
 
+  .project-video{
+    margin:0 28px 22px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:var(--bg);
+    display:grid;
+    grid-template-columns:150px minmax(0, 1fr);
+    overflow:hidden;
+    cursor:pointer;
+    color:inherit;
+    text-align:left;
+    font:inherit;
+    padding:0;
+    width:calc(100% - 56px);
+    transition:transform .15s, border-color .15s;
+  }
+  .project-video:hover{transform:translateY(-1px); border-color:var(--accent);}
+  .project-video:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+  .video-thumb{
+    min-height:108px;
+    position:relative;
+    background:
+      linear-gradient(135deg, rgba(255,138,61,.25), transparent 56%),
+      linear-gradient(180deg, var(--surface-2), var(--bg-raise));
+  }
+  .video-thumb::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(90deg, transparent 0 13px, rgba(255,255,255,.045) 13px 14px, transparent 14px 28px);
+    background-size:28px 100%;
+  }
+  .video-play{
+    position:absolute;
+    inset:50% auto auto 50%;
+    width:42px;
+    height:42px;
+    transform:translate(-50%, -50%);
+    border:1px solid var(--accent);
+    border-radius:50%;
+    background:rgba(13,18,28,.88);
+    z-index:1;
+  }
+  .video-play::before{
+    content:"";
+    position:absolute;
+    left:16px;
+    top:11px;
+    border-left:14px solid var(--accent-soft);
+    border-top:9px solid transparent;
+    border-bottom:9px solid transparent;
+  }
+  .video-copy{
+    padding:16px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+  .video-label{
+    font-family:var(--mono);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:var(--accent-soft);
+  }
+  .video-title{font-size:15px; font-weight:700; color:var(--text); line-height:1.35;}
+  .video-desc{font-size:13px; line-height:1.55; color:var(--text-dim); margin:0;}
+  .video-modal{
+    position:fixed;
+    inset:0;
+    z-index:30;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    background:rgba(5,8,13,.78);
+    backdrop-filter:blur(8px);
+  }
+  .video-modal.is-open{display:flex;}
+  .video-dialog{
+    width:min(960px, 100%);
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:var(--surface);
+    box-shadow:0 28px 70px rgba(0,0,0,.45);
+    overflow:hidden;
+  }
+  .video-dialog-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:14px 16px;
+    border-bottom:1px solid var(--border-soft);
+    background:var(--bg-raise);
+  }
+  .video-dialog-title{font-weight:700; font-size:15px;}
+  .video-close{
+    width:34px;
+    height:34px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    background:transparent;
+    color:var(--text);
+    cursor:pointer;
+    font-size:20px;
+    line-height:1;
+  }
+  .video-frame{
+    aspect-ratio:16 / 9;
+    background:var(--bg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .video-frame iframe,
+  .video-frame video{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+    background:#000;
+  }
+  .video-empty{
+    color:var(--text-dim);
+    font-family:var(--mono);
+    font-size:13px;
+    padding:24px;
+    text-align:center;
+    line-height:1.6;
+  }
+
+  @media (max-width:720px){
+    .project-video{grid-template-columns:1fr; width:calc(100% - 48px); margin-left:24px; margin-right:24px;}
+    .video-thumb{min-height:150px;}
+  }
   @media (max-width:640px){ .project-stats{grid-template-columns:1fr 1fr;} }
 
   /* ---------- EXPERIENCE ---------- */
@@ -260,7 +397,7 @@
 
   @media (prefers-reduced-motion: reduce){
     .cursor{animation:none; opacity:1;}
-    .btn, .project-links a{transition:none;}
+    .btn, .project-links a, .project-video{transition:none;}
   }
 
   /* ---------- SCROLL REVEAL ---------- */
@@ -408,7 +545,7 @@
         <h2 class="sec-title"><span class="lang-vi">3 dự án — từ pipeline AI đến công cụ tìm việc thực chiến</span><span class="lang-en">3 projects — AI pipelines to production job-matching tools</span></h2>
       </div>
 
-      <article class="project reveal">
+      <article class="project reveal" id="project-joblens">
         <div class="project-head">
           <div class="project-tag">JobLens — AI Job Matching</div>
           <h3 class="project-title"><span class="lang-vi">Công cụ so khớp việc làm LinkedIn với AI</span><span class="lang-en">AI-powered LinkedIn job matching toolkit</span></h3>
@@ -429,6 +566,14 @@
             </span>
           </p>
         </div>
+        <button class="project-video" type="button" data-video-title="JobLens — AI Job Matching" data-video-src="job-lens.mp4">
+          <span class="video-thumb"><span class="video-play" aria-hidden="true"></span></span>
+          <span class="video-copy">
+            <span class="video-label">Video demo</span>
+            <span class="video-title"><span class="lang-vi">Walkthrough luồng so khớp CV với job</span><span class="lang-en">CV-to-job matching walkthrough</span></span>
+            <span class="video-desc"><span class="lang-vi">Xem cách upload CV, scrape job và đọc điểm fit/missing skills.</span><span class="lang-en">See CV upload, job scraping, fit score, and missing-skill analysis.</span></span>
+          </span>
+        </button>
         <div class="pipeline">
           <div class="pipeline-row">
             <span class="pnode">Apify / LinkedIn</span><span class="pconn"></span>
@@ -456,7 +601,7 @@
         </div>
       </article>
 
-      <article class="project reveal">
+      <article class="project reveal" id="project-real-estate">
         <div class="project-head">
           <div class="project-tag">Real Estate RevOps</div>
           <h3 class="project-title"><span class="lang-vi">Lead Generation & AI Scoring cho bất động sản</span><span class="lang-en">Lead Generation &amp; AI Scoring for Real Estate</span></h3>
@@ -478,6 +623,14 @@
             </span>
           </p>
         </div>
+        <button class="project-video" type="button" data-video-title="Real Estate RevOps — Lead Gen & AI Scoring" data-video-src="real-estate.mp4">
+          <span class="video-thumb"><span class="video-play" aria-hidden="true"></span></span>
+          <span class="video-copy">
+            <span class="video-label">Video demo</span>
+            <span class="video-title"><span class="lang-vi">Walkthrough pipeline lead đến CRM</span><span class="lang-en">Lead-to-CRM pipeline walkthrough</span></span>
+            <span class="video-desc"><span class="lang-vi">Xem lead đi qua landing page, n8n, AI scoring, Discord và HubSpot.</span><span class="lang-en">See a lead move through the landing page, n8n, AI scoring, Discord, and HubSpot.</span></span>
+          </span>
+        </button>
         <div class="pipeline">
           <div class="pipeline-row">
             <span class="pnode">Landing Page</span><span class="pconn"></span>
@@ -505,7 +658,7 @@
         </div>
       </article>
 
-      <article class="project reveal">
+      <article class="project reveal" id="project-upmi">
         <div class="project-head">
           <div class="project-tag">UPMI — Unified Project Messaging Intelligence</div>
           <h3 class="project-title"><span class="lang-vi">RAG bot tổng hợp tri thức từ chat nội bộ</span><span class="lang-en">RAG bot for internal team chat knowledge</span></h3>
@@ -526,6 +679,14 @@
             </span>
           </p>
         </div>
+        <button class="project-video" type="button" data-video-title="UPMI — Unified Project Messaging Intelligence" data-video-src="">
+          <span class="video-thumb"><span class="video-play" aria-hidden="true"></span></span>
+          <span class="video-copy">
+            <span class="video-label">Video demo</span>
+            <span class="video-title"><span class="lang-vi">Walkthrough hỏi đáp RAG từ chat nội bộ</span><span class="lang-en">Internal-chat RAG Q&amp;A walkthrough</span></span>
+            <span class="video-desc"><span class="lang-vi">Xem cách bot truy vấn, trả lời và gắn nguồn trích dẫn.</span><span class="lang-en">See the bot retrieve context, answer, and attach cited sources.</span></span>
+          </span>
+        </button>
         <div class="pipeline">
           <div class="pipeline-row">
             <span class="pnode">Slack / Discord / Chatwork / Telegram</span><span class="pconn"></span>
@@ -726,7 +887,87 @@
   </footer>
 </main>
 
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="video-dialog" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+    <div class="video-dialog-head">
+      <div class="video-dialog-title" id="videoModalTitle">Video demo</div>
+      <button class="video-close" type="button" id="videoClose" aria-label="Close video">×</button>
+    </div>
+    <div class="video-frame" id="videoFrame"></div>
+  </div>
+</div>
+
 <script>
+(function(){
+  var modal = document.getElementById('videoModal');
+  var frame = document.getElementById('videoFrame');
+  var title = document.getElementById('videoModalTitle');
+  var close = document.getElementById('videoClose');
+  var triggers = document.querySelectorAll('.project-video');
+
+  function toEmbedUrl(src){
+    if(!src) return '';
+    if(src.indexOf('youtube.com/watch') !== -1){
+      return src.replace('watch?v=', 'embed/');
+    }
+    if(src.indexOf('youtu.be/') !== -1){
+      return src.replace('youtu.be/', 'www.youtube.com/embed/');
+    }
+    if(src.indexOf('loom.com/share/') !== -1){
+      return src.replace('loom.com/share/', 'loom.com/embed/');
+    }
+    return src;
+  }
+
+  function openVideo(button){
+    var src = (button.getAttribute('data-video-src') || '').trim();
+    var videoTitle = button.getAttribute('data-video-title') || 'Video demo';
+    title.textContent = videoTitle;
+    frame.innerHTML = '';
+
+    if(src){
+      var embedSrc = toEmbedUrl(src);
+      if(/\.(mp4|mov|webm|ogg)(\?.*)?$/i.test(embedSrc)){
+        var video = document.createElement('video');
+        video.controls = true;
+        video.autoplay = true;
+        video.src = embedSrc;
+        frame.appendChild(video);
+      } else {
+        var iframe = document.createElement('iframe');
+        iframe.src = embedSrc;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        iframe.title = videoTitle;
+        frame.appendChild(iframe);
+      }
+    } else {
+      frame.innerHTML = '<div class="video-empty"><span class="lang-vi">Video demo đang được cập nhật.</span><span class="lang-en">Demo video is being updated.</span></div>';
+    }
+
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    close.focus();
+  }
+
+  function closeVideo(){
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    frame.innerHTML = '';
+  }
+
+  triggers.forEach(function(button){
+    button.addEventListener('click', function(){ openVideo(button); });
+  });
+  close.addEventListener('click', closeVideo);
+  modal.addEventListener('click', function(event){
+    if(event.target === modal) closeVideo();
+  });
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'Escape' && modal.classList.contains('is-open')) closeVideo();
+  });
+})();
+
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var linesByLang = {
